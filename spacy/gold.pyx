@@ -175,7 +175,7 @@ class GoldCorpus(object):
             if loc.parts[-1].endswith("json"):
                 gold_tuples = read_json_file(loc)
             elif loc.parts[-1].endswith("jsonl"):
-                gold_tuples = srsly.read_jsonl(loc)
+                gold_tuples = read_json_object(srsly.read_jsonl(loc))
             elif loc.parts[-1].endswith("msg"):
                 gold_tuples = srsly.read_msgpack(loc)
             else:
